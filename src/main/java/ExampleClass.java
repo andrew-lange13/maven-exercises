@@ -9,7 +9,13 @@ public class ExampleClass {
         System.out.print("Enter Something: ");
         String userInput = scan.nextLine();
         System.out.println("You Entered: " + userInput);
-        System.out.println(StringUtils.reverse(userInput));
+        try {
+            System.out.println("You entered the number " + Integer.parseInt(userInput));
+        } catch (NumberFormatException e) {
+            System.out.println("\"" + userInput + "\"" + " is not a number");
+        }
+        System.out.println("Flipped Case: " + StringUtils.swapCase(userInput));
+        System.out.println("Reversed: " + StringUtils.reverse(userInput));
     }
 
 }
